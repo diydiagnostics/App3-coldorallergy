@@ -36,25 +36,23 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-	// Function called when "Yes" button is clicked
-	function handleYes() {
-		coldAdd();
-	}
+  function handleResponse(nextPageUrl, answer) {
+    if (answer === 'yes') {
+      coldAdd();
+    } else {
+      allergyAdd();
+    }
+    // Redirect to the next page
+    window.location.href = nextPageUrl;
+  }
 
-	// Function called when "No" button is clicked
-	function handleNo() {
-		allergyAdd();
-	}
+  function coldAdd() {
+    console.log("Fever condition recorded.");
+  }
 
-	function coldAdd() {
-		// Perform the logic for "Yes"
-		console.log("Fever condition recorded.");
-	}
-
-	function allergyAdd() {
-		// Perform the logic for "No"
-		console.log("No fever condition recorded.");
-	}
+  function allergyAdd() {
+    console.log("No fever condition recorded.");
+  }
 </script>
 
 
@@ -97,19 +95,19 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
 <div class="page" id="two">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 2</h1>
-	</div>
+  <div class="w3-container w3-flat-carrot">
+    <h1>Question 2</h1>
+  </div>
 
-	<div id="content" class="w3-container">
-		<p>Do you have a fever?</p>    
+  <div id="content" class="w3-container">
+    <p>Do you have a fever?</p>
 
-		<!-- Button for "Yes" -->
-		<a href="nextpage.html" class="w3-btn w3-black" onclick="handleYes()">Yes</a>
+    <!-- Button for "Yes" -->
+    <button class="w3-btn w3-black" onclick="handleResponse('nextpage.html', 'yes')">Yes</button>
 
-		<!-- Button for "No" -->
-		<a href="nextpage.html" class="w3-btn w3-black" onclick="handleNo()">No</a>
-	</div>
+    <!-- Button for "No" -->
+    <button class="w3-btn w3-black" onclick="handleResponse('nextpage.html', 'no')">No</button>
+  </div>
 </div>
 
 <div class="page" id="two">
