@@ -96,7 +96,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <div class="page" id="two">
   <div class="w3-container w3-flat-carrot">
-    <h1>Question 2</h1>
+    <h1>Question 1</h1>
   </div>
 
   <div id="content" class="w3-container">
@@ -110,22 +110,28 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   </div>
 </div>
 
-<div class="page" id="two">
+<script>
+  function navigateToNextPage(url) {
+    window.location.href = url;
+  }
+</script>
+
+<div class="page" id="three">
   <div class="w3-container w3-flat-carrot">
-     <h1>Question 3</h1>
+    <h1>Question 2</h1>
   </div>
-	
+
   <div id="content" class="w3-container">
-     <p>Do you have a fever?</p>    
-    	<!-- Button for "Yes" -->
-    	<button class="w3-btn w3-black" onclick="handleResponse('nextpage.html', 'yes')">Yes</button>
+    <p>Do you have a fever?</p>
 
-    	<!-- Button for "No" -->
-    	<button class="w3-btn w3-black" onclick="handleResponse('nextpage.html', 'no')">No</button>
-	  
+    <!-- Button for "Yes" -->
+    <button class="w3-btn w3-black" onclick="navigateToNextPage('nextpage.html')">Yes</button>
+
+    <!-- Button for "No" -->
+    <button class="w3-btn w3-black" onclick="navigateToNextPage('nextpage.html')">No</button>
   </div>
-</div>	
-
+</div>
+	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
