@@ -57,6 +57,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 
+
 <style>	
 .body {
      margin: 0em;
@@ -102,19 +103,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   <div id="content" class="w3-container">
     <p>Do you have a fever?</p>
 
-      <!-- Button for "Yes" -->
-      <button class="w3-btn w3-black" onclick="handleResponse('nextpage.html', 'yes')">Yes</button>
-
-      <!-- Button for "No" -->
-      <button class="w3-btn w3-black" onclick="handleResponse('nextpage.html', 'no')">No</button>
+     <!-- Page Two Buttons -->
+	<button class="w3-btn w3-black" onclick="handleResponse('nextpage.html', 'yes')">Yes</button>
+	<button class="w3-btn w3-black" onclick="handleResponse('nextpage.html', 'no')">No</button>
   </div>
 </div>
-
-<script>
-  function navigateToNextPage(url) {
-    window.location.href = url;
-  }
-</script>
 
 <div class="page" id="three">
   <div class="w3-container w3-flat-carrot">
@@ -124,11 +117,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   <div id="content" class="w3-container">
     <p>Do you have a fever?</p>
 
-    <!-- Button for "Yes" -->
-    <button class="w3-btn w3-black" onclick="navigateToNextPage('nextpage.html')">Yes</button>
-
-    <!-- Button for "No" -->
-    <button class="w3-btn w3-black" onclick="navigateToNextPage('nextpage.html')">No</button>
+    <!-- Page Three Buttons -->
+	<button class="w3-btn w3-black" onclick="handleResponse('nextpage.html', 'yes')">Yes</button>
+	<button class="w3-btn w3-black" onclick="handleResponse('nextpage.html', 'no')">No</button>
   </div>
 </div>
 	
