@@ -51,7 +51,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         }
 
-	function results () {
+	function resultsPercent () {
 		var resultText = document.getElementById("results");
 		var allergyPercent = (allergy_count/4)*100;
 		var coldPercent = (cold_count/4)*100; 
@@ -120,9 +120,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Do You Have a Fever?</p>
-	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
 	</div>	
-         <a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+         <a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
 
 	</div>	
 	
@@ -133,9 +133,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Do You Have a Sore Throat?</p>
-	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
 	</div>
-         <a href="#foir"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+         <a href="#foir"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
 
 	</div>
 </div>	
