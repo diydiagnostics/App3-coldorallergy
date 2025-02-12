@@ -45,7 +45,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		alert(allergy_count);
 
         }
-
+	
         function coldAdd(){
             cold_count = cold_count + 1;
 
@@ -57,7 +57,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		var coldPercent = (cold_count/4)*100; 
 		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
 	}
-	  
+
+// i struggled with where to place the above text as I thought it was supposed to be by the results
 
   </script>
 
@@ -87,6 +88,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
+
+<!this is where I started my questions> 
+
 	<h1>Cold or Allergies?</h1>
 </div>
 	
@@ -101,6 +105,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
+		
+<! I made a separate page for my first question> 
+		
 		<h1>Question 1</h1>
 	</div>
 	
@@ -109,10 +116,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
 	</div>	
         <a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
-
+<! I chose to be a div between the two buttons so they don't appear on the same line> 
     	</div>
 </div>
 
+<! created a second page for my next question> 
+	
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
@@ -123,7 +132,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
 	</div>	
          <a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
-	
+
+<! separated the buttons again for aesthetic purposes> 
 	</div>	
 </div>
 	
@@ -138,8 +148,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
          <a href="#four"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
 
+<! separated the buttons again>
 	</div>
 </div>	
+
+<! made a separate for the final questions> 
 	
 <div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
@@ -155,6 +168,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 </div>	
 
+<! separate page for the results and separated the buttons again> 
+
+<! this was where I struggled a lot>
+<! the mentors provided a lot of help; they helped me placed the results command line near the top of this file>
+<! Figured out that resultsPercent goes after onclick to finalize the page>
 	
 <div class="page" id="five">
 	<div class="w3-container w3-flat-carrot">
@@ -166,7 +184,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<a href="#five" onclick="resultsPercent();" class="w3-btn w3-black"> Results!! </a>
 		
 </div>
-	
+<! I struggled on what to put after "w3-black", I originally left it blank and realized that my results was gone>
+<! I then created "Results!! which leaves a hyperlinked Results on the my results page but it doesn't lead to anything> 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
