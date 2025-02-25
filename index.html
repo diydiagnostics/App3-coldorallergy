@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Brianna Garcia
  
 Further Information:
 http://cns.utexas.edu/fri
@@ -17,10 +17,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+The goal of this code is to try and diagnose whether a person is suffering from allergies or a cold.
  
 Known Issues:
-blah, blah, blah, blah
+In the United States, millions of people suffer from colds and allergies every year. 1 in 3 adults have seasonal allergiesand about 25 million Americans visit their doctor every year with upper respirator complications.
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
@@ -38,8 +38,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
         var allergy_count = 0;
         var cold_count = 0;
-
-
+<!-- These variables are based on users symptoms and whether they line up with colds or allergies more -->
         function allergyAdd(){
             allergy_count = allergy_count + 1;
 		alert(allergy_count);
@@ -50,6 +49,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             cold_count = cold_count + 1;
         }
 
+	function showResults(){
+	var aPercent = Math.round((allergy_count/6) * 100)
+	var cPercent = Math.round((cold_count/6) * 100)
+	var resultText = document.getElementById("userResults")
+	resultText.innerHTML = "Probability it is a cold = " + cPercent + "%" + <br> Probability it is allergies = " + aPercent + "%"
+	}
+	
   </script>
 
 
@@ -90,26 +96,114 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
+<!-- The first question on the page -->
+<!-- The answer yes will indicate a cold -->
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Put Question 1 content here.</p>    
+        <p>Do you have a fever?.</p> <!-- If yes this will indicate a cold -->
+	<a href="#two" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> Yes</a> <!-- This adds +1 to cold if yes -->
+	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> No</a> <!-- This adds +1 to allergies if no -->
     	</div>
 </div>
-
+<!-- The page is closed with html div -->
+	
+<!-- The second question -->
+<!-- The answer yes will indicate allergies -->
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Content of page 2 goes here.</p>
+		<p>Are your eyes watery or itchy?</p> <!-- If yes this will indicate allergies -->
+		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> Yes</a> <!-- This adds +1 to allergy if yes -->
+		<a href="#three" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> No</a> <!-- This adds +1 to cold if no -->
 	</div>
 </div>	
+<!-- The page is closed with html div -->
+	
+<!-- The Third question -->
+<!-- The answer yes will indicate a cold -->
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p></p> <!-- If yes this will indicate a cold -->
+		<a href="#four" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> Yes</a> <!-- This adds +1 to cold if yes -->
+		<a href="#four" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> No</a> <!-- This adds +1 to allergy if no -->
+	</div>
+</div>	
+<!-- The page is closed with html div -->
 
+<!-- The fourth question -->
+<!-- The answer yes will indicate allergies -->
+<div class="page" id="four">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are your symptoms seasonal?</p> <!-- If yes this will indicate allergies -->
+		<a href="#five" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> Yes</a> <!-- This adds +1 to allergy if yes -->
+		<a href="five" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> No</a> <!-- This adds +1 to cold if no -->
+	</div>
+</div>	
+<!-- This page is closed with html div -->
+
+<!-- This is my additional question for colds -->
+<!-- The fifth question -->
+<!-- the answer yes will indicate a cold -->
+<div class="page" id="five">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have body aches or feel fatigue?</p> <!-- If yes this will indicate a cold -->
+		<a href="#six" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> Yes</a> <!-- This adds +1 to cold if yes -->
+		<a href="#six" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> No</a> <!-- This adds +1 to allergy if no -->
+	</div>
+</div>	
+<!-- this page is closed with html div -->
+
+<!-- This is my aditional question for allergies -->
+<!-- The sixth question -->
+<!-- The answer yes will indicate allergies -->
+<div class="page" id="six">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Have your symptoms persisted for serveral weeks?</p> <!-- If yes this will indicate allergies -->
+		<a href="#seven" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> Yes</a> <!-- This adds +1 to allergy if yes -->
+		<a href="#seven" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> No</a> <!-- This adds +1 to cold if no -->
+	</div>
+</div>	
+<!-- This page is closed with html div-->
+
+<!-- My closing page to let the user know that survey is over -->
+<!-- I use the same html template as the other pages-->
+<div class="page" id="seven">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>This is the end of the survey!</p> 
+		<p>Click here to view your results!</p> <!-- Showing the user how to get their results -->
+		<a class="w3-btn w3-grey w3-round" onclick="showResults();"> Display Results <a/> <!-- A button for users to easily access their results -->
+		<p id="userResults" ></p> <!-- Allows Access -->
+	</div>
+</div>	
+<!-- The final html to close the page -->
+			
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
