@@ -36,8 +36,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-        var allergy_count = 0;
-        var cold_count = 0;
+        var allergy_count = 0; //this variable counts answers that correlate to allergies
+        var cold_count = 0; //this variable counts answers correlating to the onset of colds. 
 
 
         function allergyAdd(){
@@ -45,17 +45,20 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		alert(allergy_count);
 
         }
-	
+
+	//this function calculates the number of answers that correlate to the diagnosis of allergies 
         function coldAdd(){
             cold_count = cold_count + 1;
 
         }
 
+	//This function calculates the number of answers correlating to a cold diagnosis. 
+	
 	function resultsPercent () {
-		var resultText = document.getElementById("results");
-		var allergyPercent = (allergy_count/4)*100;
+		var resultText = document.getElementById("results"); //defined a new variable to calculate the allergy percent //
+		var allergyPercent = (allergy_count/4)*100; //defined a new variable to calculate the cold percent.//
 		var coldPercent = (cold_count/4)*100; 
-		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; //produces the results on the of cold and allergy percentage on the same page.// 
 	}
 
 // i struggled with where to place the above text as I thought it was supposed to be by the results
