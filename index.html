@@ -92,7 +92,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
 
-<!this is where I started my questions> 
+<!-- this is where I started my questions. --> 
 
 	<h1>Cold or Allergies?</h1>
 </div>
@@ -109,21 +109,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
 		
-<! I made a separate page for my first question> 
+<!-- I made a separate page for my first question --> 
 		
 		<h1>Question 1</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
         <p>Are Your Eyes Watery or Itchy.</p> 
+<!--I edited the question here -->
 	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-</div>	
         <a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
-<! I chose to be a div between the two buttons so they don't appear on the same line> 
+<!-- this functions create "yes" or "no" buttons that will then take you to page two when clicked --> 
     	</div>
 </div>
 
-<! created a second page for my next question> 
+<!-- created a second page for my next question --> 
 	
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
@@ -132,9 +132,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Do You Have a Fever?</p>
+	 <a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
 	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
- </div>	
-         <a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
+
 
 <! separated the buttons again for aesthetic purposes> 
 	</div>	
