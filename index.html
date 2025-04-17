@@ -132,11 +132,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Do You Have a Fever?</p>
-	 <a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
+	<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
 	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
 
 
-<! separated the buttons again for aesthetic purposes> 
+<!-- This function of code creates page two, and clicking one of the buttons takes the user to the next page--> 
+
+		
 	</div>	
 </div>
 	
@@ -147,15 +149,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Do You Have a Sore Throat?</p>
+	<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
 	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
-	</div>
-         <a href="#four"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
-
-<! separated the buttons again>
+<!-- This block of code created page three, and clicking either of these buttons will take the user to the next page. -->
+		
 	</div>
 </div>	
 
-<! made a separate for the final questions> 
+<!-- made a separate for the final questions --> 
 	
 <div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
@@ -165,17 +166,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 		<p>Are your Symptoms Seasonal or Chronic</p>
 	<a href="#five"onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-	</div>	
          <a href="#five"onclick="coldAdd();" class="w3-btn w3-black">No</a>
-
+<!--this is page four, and clicking either button, takes the user to the next page -->
 	</div>
 </div>	
 
-<! separate page for the results and separated the buttons again> 
+<!-- separate page for the results and separated the buttons again--> 
 
-<! this was where I struggled a lot>
-<! the mentors provided a lot of help; they helped me placed the results command line near the top of this file>
-<! Figured out that resultsPercent goes after onclick to finalize the page>
+<!-- this was where I struggled a lot-->
+<!-- the mentors provided a lot of help; they helped me place the results command line near the top of this file-->
+
+
+<!-- Figured out that resultsPercent goes after onclick to finalize the page-->
 	
 <div class="page" id="five">
 	<div class="w3-container w3-flat-carrot">
