@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Janvi Duri
  
 Further Information:
 http://cns.utexas.edu/fri
@@ -17,10 +17,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+The purpose of this code is to help patients/users find the probability of having a cold or allergies based on their symptoms. 
  
 Known Issues:
-blah, blah, blah, blah
+I misplaced some of the codes for the buttons. 
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
@@ -36,8 +36,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-        var allergy_count = 0;
-        var cold_count = 0;
+        var allergy_count = 0; //this variable counts answers that correlate to allergies
+        var cold_count = 0; //this variable counts answers correlating to the onset of colds. 
 
 
         function allergyAdd(){
@@ -46,9 +46,22 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         }
 
+	//this function calculates the number of answers that correlate to the diagnosis of allergies 
         function coldAdd(){
             cold_count = cold_count + 1;
+
         }
+
+	//This function calculates the number of answers correlating to a cold diagnosis. 
+	
+	function resultsPercent () {
+		var resultText = document.getElementById("results"); //defined a new variable to calculate the allergy percent //
+		var allergyPercent = (allergy_count/4)*100; //defined a new variable to calculate the cold percent.//
+		var coldPercent = (cold_count/4)*100; 
+		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; //produces the results on the of cold and allergy percentage on the same page.// 
+	}
+
+// i struggled with where to place the above text as I thought it was supposed to be by the results
 
   </script>
 
@@ -78,6 +91,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
+
+<!-- this is where I started my questions. --> 
+
 	<h1>Cold or Allergies?</h1>
 </div>
 	
@@ -93,24 +109,113 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
+		
+<!-- I made a separate page for my first question --> 
+		
 		<h1>Question 1</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Put Question 1 content here.</p>    
+        <p>Are Your Eyes Watery or Itchy.</p> 
+<!--I edited the question here -->
+	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+        <a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+<!-- this functions create "yes" or "no" buttons that will then take you to page two when clicked --> 
     	</div>
 </div>
 
+<!-- created a second page for my next question --> 
+	
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Content of page 2 goes here.</p>
+		<p>Do You Have a Fever?</p>
+	<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
+	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black"> No</a>
+
+
+<!-- This function of code creates page two, and clicking one of the buttons takes the user to the next page--> 
+
+		
+	</div>	
+</div>
+	
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do You Have a Sore Throat?</p>
+	<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
+	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+<!-- This block of code created page three, and clicking either of these buttons will take the user to the next page. -->
+		
 	</div>
 </div>	
 
+<!-- made a separate for the final questions --> 
+	
+<div class="page" id="four">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are your Symptoms Seasonal or Chronic</p>
+	<a href="#five"onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+         <a href="#five"onclick="coldAdd();" class="w3-btn w3-black">No</a>
+<!--this is page four, and clicking either button, takes the user to the next page -->
+	</div>
+</div>	
+
+<!-- separate page for the results and separated the buttons again--> 
+
+<!-- this was where I struggled a lot-->
+<!-- the mentors provided a lot of help; they helped me place the results command line near the top of this file-->
+
+
+<!-- Figured out that resultsPercent goes after onclick to finalize the page-->
+	
+<div class="page" id="five">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Is your nasal discharge yellow almost green and very thick</p>
+	<a href="#six"onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
+         <a href="#six"onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+	</div>
+
+<div class="page" id="six">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you sneezing frequently</p>
+	<a href="#seven"onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+         <a href="#seven"onclick="coldAdd();" class="w3-btn w3-black">No</a>
+	</div>
+		
+<div class="page" id="seven"> 
+	<div class="w3-container w3-flat-carrot">
+		<h2>Results </h2>
+	</div>
+
+	<div id="content" class="w3-container">
+	<p id="results"></p>
+	<a href="#seven" onclick="resultsPercent();" class="w3-btn w3-black"> Results!! </a>
+<!-- This is the last page, and clicking this will output two probabilities that will state the chances of having either an allergy or cold -->
+		
+</div>
+<!-- I struggled on what to put after "w3-black", I originally left it blank and realized that my results was gone-->
+<!-- I then created "Results!! which leaves a hyperlinked Results on the my results page but it doesn't lead to anything--> 
+<!-- An alternative diagnosis idea that can help the user differentiate between their diseases are getting allergy tested to find out what you are allergic to and see if the onset of symptoms correlates to allergies or cold -->
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
