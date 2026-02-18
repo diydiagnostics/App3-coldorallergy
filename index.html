@@ -82,9 +82,9 @@ function showResults(){
 }
 </style>
 
-<body id="start">
+<body>
 <div class="page" id="start">
-
+</div>
     <div class="w3-container w3-flat-carrot">
         <h1>Cold or Allergies?</h1>
     </div>
@@ -98,7 +98,7 @@ function showResults(){
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 </div> <!-- adding this because it seems to be missing????? -->
-	
+</div> <!-- CLOSES start page -->
 <div class="page" id="q1">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
@@ -178,8 +178,8 @@ function showResults(){
 
     <div class="w3-container">
         <p id="results"></p>
-        <a href="resultsPage" onclick="allergyAdd(); showResults();" class="w3-btn w3-black"> No</a>
-		<a href="resultsPage" onclick="coldAdd(); showResults();" class="w3-btn w3-black"> Yes</a>
+        <a href="#resultsPage" onclick="allergyAdd(); showResults();" class="w3-btn w3-black"> No</a>
+		<a href="#resultsPage" onclick="coldAdd(); showResults();" class="w3-btn w3-black"> Yes</a>
 		
     </div>
 </div>
