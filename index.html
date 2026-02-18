@@ -104,7 +104,7 @@ function showResults(){
 	
     	<div id="content" class="w3-container">
         <p>Are your eyes itchy or watery?</p>
-		<a href="#q2" onclick="AllergyAdd();" class="w3-btn w3-black"> Yes</a>	
+		<a href="#q2" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>	
 		<a href="#q2" onclick="coldAdd();"class="w3-btn w3-black"> No</a>	
     	</div>
 </div>
@@ -116,8 +116,8 @@ function showResults(){
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?</p>
-		<a href="#q3" onclick="AllergyAdd();" class="w3-btn w3-black"> No</a>	
-		<a href="#q3" onclick="ColdAdd();"class="w3-btn w3-black"> Yes</a>	
+		<a href="#q3" onclick="allergyAdd();" class="w3-btn w3-black"> No</a>	
+		<a href="#q3" onclick="coldAdd();"class="w3-btn w3-black"> Yes</a>	
 	</div>
 </div>	
 
@@ -128,8 +128,8 @@ function showResults(){
 
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
-		<a href="#q4" onclick="AllergyAdd();" class="w3-btn w3-black"> No</a>	
-		<a href="#q4" onclick="ColdAdd();"class="w3-btn w3-black"> Yes</a>	
+		<a href="#q4" onclick="allergyAdd();" class="w3-btn w3-black"> No</a>	
+		<a href="#q4" onclick="coldAdd();"class="w3-btn w3-black"> Yes</a>	
 	</div>
 </div>	
 
@@ -140,7 +140,7 @@ function showResults(){
 	
     	<div id="content" class="w3-container">
         <p>Are your symptoms seasonal or chronic?</p>
-		<a href="#q5" onclick="AllergyAdd();" class="w3-btn w3-black"> Yes</a>	
+		<a href="#q5" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>	
 		<a href="#q5" onclick="coldAdd();"class="w3-btn w3-black"> No</a>	
     	</div>
 </div>
@@ -152,7 +152,7 @@ function showResults(){
 	
     	<div id="content" class="w3-container">
         <p>Do you have a 'dry' cough?</p>
-		<a href="#q6" onclick="AllergyAdd();" class="w3-btn w3-black"> Yes</a>	
+		<a href="#q6" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>	
 		<a href="#q6" onclick="coldAdd();"class="w3-btn w3-black"> No</a>	
     	</div>
 </div>
@@ -164,7 +164,7 @@ function showResults(){
 	
     	<div id="content" class="w3-container">
         <p>Do you have a 'wet' cough?</p>
-		<a href="#resultsPage" onclick="AllergyAdd();" class="w3-btn w3-black"> No</a>	
+		<a href="#resultsPage" onclick="allergyAdd();" class="w3-btn w3-black"> No</a>	
 		<a href="#resultsPage" onclick="coldAdd();"class="w3-btn w3-black"> Yes</a>	
     	</div>
 </div>
@@ -176,7 +176,9 @@ function showResults(){
 
     <div class="w3-container">
         <p id="results"></p>
-        <a href="#" onclick="showResults()" class="w3-btn w3-black">Show Results</a>
+        <a href="resultsPage" onclick="allergyAdd(); showResults();" class="w3-btn w3-black"> No</a>
+		<a href="resultsPage" onclick="coldAdd(); showResults();" class="w3-btn w3-black"> Yes</a>
+		
     </div>
 </div>
 
