@@ -27,17 +27,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 -->
 	
    <head> 
-      <title>Hello World</title>  
+      <title>Cold or Allergies?</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
-      <link rel="stylesheet" href="w3.css">
+    
+	   <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
-   </head> 
-
 
 <script>
-var allergy_count = 0;
-var cold_count = 0;
+	var allergy_count = 0;
+	var cold_count = 0;
 
 function allergyAdd(){
     allergy_count++;
@@ -67,7 +66,7 @@ function showResults(){
 
 <style>	
 body {
-     margin: 0em;
+     margin: 0;
 }
 
 .page {
@@ -85,7 +84,8 @@ body {
     left: 0vw;
     z-index: 1;
 }
-	
+
+/* Start page visible by default */
 #start {
 	left: 0vw;
 	z-index: 1; 
@@ -94,7 +94,7 @@ body {
 
 </head>
 <body>
-	
+
 <div class="page" id="start">
 
     <div class="w3-container w3-flat-carrot">
