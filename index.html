@@ -91,82 +91,88 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 </div> <!-- adding this because it seems to be missing????? -->
 	
-<div class="page" id="one">
+<div class="page" id="q1">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
         <p>Are your eyes itchy or watery?</p>
-		<a href="#two" onclick="AllergyAdd();" class="w3-btn w3-black"> Yes</a>	
-		<a href="#two" onclick="coldAdd();"class="w3-btn w3-black"> No</a>	
+		<a href="#q2" onclick="AllergyAdd();" class="w3-btn w3-black"> Yes</a>	
+		<a href="#q2" onclick="coldAdd();"class="w3-btn w3-black"> No</a>	
     	</div>
 </div>
 
-<div class="page" id="two">
+<div class="page" id="q2">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?</p>
-		<a href="#two" onclick="AllergyAdd();" class="w3-btn w3-black"> No</a>	
-		<a href="#two" onclick="ColdAdd();"class="w3-btn w3-black"> Yes</a>	
+		<a href="#q3" onclick="AllergyAdd();" class="w3-btn w3-black"> No</a>	
+		<a href="#q3" onclick="ColdAdd();"class="w3-btn w3-black"> Yes</a>	
 	</div>
 </div>	
 
-<div class="page" id="two">
+<div class="page" id="q3">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
 	</div>
 
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
-		<a href="#two" onclick="AllergyAdd();" class="w3-btn w3-black"> No</a>	
-		<a href="#two" onclick="ColdAdd();"class="w3-btn w3-black"> Yes</a>	
+		<a href="#q4" onclick="AllergyAdd();" class="w3-btn w3-black"> No</a>	
+		<a href="#q4" onclick="ColdAdd();"class="w3-btn w3-black"> Yes</a>	
 	</div>
 </div>	
 
-<div class="page" id="one">
+<div class="page" id="q4">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
         <p>Are your symptoms seasonal or chronic?</p>
-		<a href="#two" onclick="AllergyAdd();" class="w3-btn w3-black"> Yes</a>	
-		<a href="#two" onclick="coldAdd();"class="w3-btn w3-black"> No</a>	
+		<a href="#q5" onclick="AllergyAdd();" class="w3-btn w3-black"> Yes</a>	
+		<a href="#q5" onclick="coldAdd();"class="w3-btn w3-black"> No</a>	
     	</div>
 </div>
 
-<div class="page" id="one">
+<div class="page" id="q5">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 5</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
         <p>Do you have a 'dry' cough?</p>
-		<a href="#two" onclick="AllergyAdd();" class="w3-btn w3-black"> Yes</a>	
-		<a href="#two" onclick="coldAdd();"class="w3-btn w3-black"> No</a>	
+		<a href="#q6" onclick="AllergyAdd();" class="w3-btn w3-black"> Yes</a>	
+		<a href="#q6" onclick="coldAdd();"class="w3-btn w3-black"> No</a>	
     	</div>
 </div>
 
-<div class="page" id="one">
+<div class="page" id="q6">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 6</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
         <p>Do you have a 'wet' cough?</p>
-		<a href="#two" onclick="AllergyAdd();" class="w3-btn w3-black"> No</a>	
-		<a href="#two" onclick="coldAdd();"class="w3-btn w3-black"> Yes</a>	
+		<a href="#resultsPage" onclick="AllergyAdd();" class="w3-btn w3-black"> No</a>	
+		<a href="#resultsPage" onclick="coldAdd();"class="w3-btn w3-black"> Yes</a>	
     	</div>
 </div>
 
+<div class="page" id="resultsPage">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Your Results</h1>
+    </div>
 
-	<pid="resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a
-cold =" + coldPercent;"></pid>/p>.
-	var resultText = document.getElementBlyd("results");
+    <div class="w3-container">
+        <p id="results"></p>
+        <a href="#" onclick="showResults()" class="w3-btn w3-black">Show Results</a>
+    </div>
+</div>
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
