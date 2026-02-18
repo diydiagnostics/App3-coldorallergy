@@ -50,6 +50,12 @@ function coldAdd(){
 function showResults(){
     var total = allergy_count + cold_count;
 
+	if(total === 0){
+		document.getElementById("results").innerHTML = 
+			"Please answer the questions first.";
+		return;
+	} 
+	
     var allergyPercent = Math.round((allergy_count / total) * 100);
     var coldPercent = Math.round((cold_count / total) * 100);
 
@@ -59,9 +65,8 @@ function showResults(){
 }
 </script>
 
-
 <style>	
-.body {
+body {
      margin: 0em;
 }
 
@@ -80,12 +85,14 @@ function showResults(){
     left: 0vw;
     z-index: 1;
 }
+	
 #start {
 	left: 0vw;
 	z-index: 1; 
 }
 </style>
 
+</head>
 <body>
 <div class="page" id="start">
 </div>
