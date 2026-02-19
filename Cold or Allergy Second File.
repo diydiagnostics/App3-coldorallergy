@@ -151,8 +151,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         </div>
         <div class="w3-container">
             <p>Are your symptoms seasonal or chronic?</p>
-            <a href="#q5" onclick="allergyAdd()" class="w3-btn w3-black">Yes</a>
-            <a href="#q5" onclick="coldAdd()" class="w3-btn w3-black">No</a>
+            <a href="#q5" onclick="allergyAdd()" class="w3-btn w3-black">Seasonal</a>
+            <a href="#q5" onclick="coldAdd()" class="w3-btn w3-black">Chronic</a>
         </div>
     </div>
 
