@@ -1,0 +1,204 @@
+<!DOCTYPE html> 
+<html> 
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
+Tim Riedel
+Author 2
+ 
+Further Information:
+http://cns.utexas.edu/fri
+ 
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+blah, blah, blah,
+ 
+Known Issues:
+blah, blah, blah, blah
+
+https://www.w3schools.com/w3css/default.asp
+https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+-->
+	
+   <head> 
+      <title>Cold or Allergies?</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+    
+	   <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+
+<script>
+	var allergy_count = 0;
+	var cold_count = 0;
+
+function allergyAdd(){
+    allergy_count++;
+}
+
+function coldAdd(){
+    cold_count++;
+}
+
+function showResults(){
+    var total = allergy_count + cold_count;
+
+	if(total === 0){
+		document.getElementById("results").innerHTML = 
+			"Please answer the questions first.";
+		return;
+	} 
+	
+    var allergyPercent = Math.round((allergy_count / total) * 100);
+    var coldPercent = Math.round((cold_count / total) * 100);
+
+    document.getElementById("results").innerHTML =
+        "Probability it is allergies: " + allergyPercent + "%<br>" +
+        "Probability it is a cold: " + coldPercent + "%";
+}
+</script>
+
+<style>	
+body {
+     margin: 0;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+
+/* Start page visible by default */
+#start {
+	left: 0vw;
+	z-index: 1; 
+}
+</style>
+
+</head>
+<body>
+
+<div class="page" id="start">
+
+    <div class="w3-container w3-flat-carrot">
+        <h1>Cold or Allergies?</h1>
+    </div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#q1" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+</div> <!-- adding this because it seems to be missing????? -->
+</div> <!-- CLOSES start page -->
+<div class="page" id="q1">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Are your eyes itchy or watery?</p>
+		<a href="#q2" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>	
+		<a href="#q2" onclick="coldAdd();"class="w3-btn w3-black"> No</a>	
+    	</div>
+</div>
+
+<div class="page" id="q2">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a fever?</p>
+		<a href="#q3" onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>	
+		<a href="#q3" onclick="allergyAdd();"class="w3-btn w3-black"> No</a>	
+	</div>
+</div>	
+
+<div class="page" id="q3">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p>
+		<a href="#q4" onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>	
+		<a href="#q4" onclick="alergyAdd();"class="w3-btn w3-black"> No</a>	
+	</div>
+</div>	
+
+<div class="page" id="q4">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Are your symptoms seasonal or chronic?</p>
+		<a href="#q5" onclick="allergyAdd();" class="w3-btn w3-black"> Seasonal</a>	
+		<a href="#q5" onclick="coldAdd();"class="w3-btn w3-black"> Chronic</a>	
+    	</div>
+</div>
+
+<div class="page" id="q5">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have a 'dry' cough?</p>
+		<a href="#q6" onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>	
+		<a href="#q6" onclick="coldAdd();"class="w3-btn w3-black"> No</a>	
+    	</div>
+</div>
+
+<div class="page" id="q6">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have a 'wet' cough?</p>
+		<a href="#resultsPage" onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>	
+		<a href="#resultsPage" onclick="allergyAdd();"class="w3-btn w3-black"> No</a>	
+    	</div>
+</div>
+
+<div class="page" id="resultsPage">
+    <div class="w3-container w3-flat-carrot">
+        <h1>Your Results</h1>
+    </div>
+
+    <div class="w3-container">
+        <p id="results"></p>
+        <a href="#resultsPage" onclick="allergyAdd(); showResults();" class="w3-btn w3-black"> Yes</a>
+		<a href="#resultsPage" onclick="coldAdd(); showResults();" class="w3-btn w3-black"> No</a>
+		
+    </div>
+</div>
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>Cold or Allergies? DIY! 2026.</p>
+</footer>
+
+</body>
+</html>
