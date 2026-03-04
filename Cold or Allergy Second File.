@@ -1,0 +1,199 @@
+<!DOCTYPE html> 
+<html> 
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
+Tim Riedel
+Author 2
+ 
+Further Information:
+http://cns.utexas.edu/fri
+ 
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+blah, blah, blah,
+ 
+Known Issues:
+blah, blah, blah, blah
+
+https://www.w3schools.com/w3css/default.asp
+https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+-->
+	
+ <head>
+    <title>Cold or Allergies?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="w3-colors-flat.css">
+
+    <script>
+        var allergy_count = 0;
+        var cold_count = 0;
+
+        function allergyAdd() {
+            allergy_count++;
+        }
+
+        function coldAdd() {
+            cold_count++;
+        }
+
+        function showResults() {
+            var total = allergy_count + cold_count;
+
+            if (total === 0) {
+                document.getElementById("results").innerHTML =
+                    "Please answer the questions first.";
+                return;
+            }
+
+            var allergyPercent = Math.round((allergy_count / total) * 100);
+            var coldPercent = Math.round((cold_count / total) * 100);
+
+            document.getElementById("results").innerHTML =
+                "Probability it is allergies: " + allergyPercent + "%<br>" +
+                "Probability it is a cold: " + coldPercent + "%";
+        }
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .page {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -100vw;
+            overflow-y: auto;
+            background-color: white;
+        }
+
+        .page:target {
+            left: 0;
+        }
+
+        /* Start page visible by default */
+        #start {
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- START PAGE -->
+    <div class="page" id="start">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Cold or Allergies?</h1>
+        </div>
+
+        <div class="w3-container">
+            <p>Answer a few short questions to find out!</p>
+            <a href="#q1" class="w3-btn w3-grey w3-round">Get Started</a>
+
+            <p style="margin-top:20px;">
+                THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+            </p>
+        </div>
+    </div>
+
+    <!-- QUESTION 1 -->
+    <div class="page" id="q1">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 1</h1>
+        </div>
+        <div class="w3-container">
+            <p>Are your eyes itchy or watery?</p>
+            <a href="#q2" onclick="allergyAdd()" class="w3-btn w3-black">Yes</a>
+            <a href="#q2" onclick="coldAdd()" class="w3-btn w3-black">No</a>
+        </div>
+    </div>
+
+    <!-- QUESTION 2 -->
+    <div class="page" id="q2">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 2</h1>
+        </div>
+        <div class="w3-container">
+            <p>Do you have a fever?</p>
+            <a href="#q3" onclick="allergyAdd()" class="w3-btn w3-black">No</a>
+            <a href="#q3" onclick="coldAdd()" class="w3-btn w3-black">Yes</a>
+        </div>
+    </div>
+
+    <!-- QUESTION 3 -->
+    <div class="page" id="q3">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 3</h1>
+        </div>
+        <div class="w3-container">
+            <p>Do you have a sore throat?</p>
+            <a href="#q4" onclick="allergyAdd()" class="w3-btn w3-black">No</a>
+            <a href="#q4" onclick="coldAdd()" class="w3-btn w3-black">Yes</a>
+        </div>
+    </div>
+
+    <!-- QUESTION 4 -->
+    <div class="page" id="q4">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 4</h1>
+        </div>
+        <div class="w3-container">
+            <p>Are your symptoms seasonal or chronic?</p>
+            <a href="#q5" onclick="allergyAdd()" class="w3-btn w3-black">Seasonal</a>
+            <a href="#q5" onclick="coldAdd()" class="w3-btn w3-black">Chronic</a>
+        </div>
+    </div>
+
+    <!-- QUESTION 5 -->
+    <div class="page" id="q5">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 5</h1>
+        </div>
+        <div class="w3-container">
+            <p>Do you have a dry cough?</p>
+            <a href="#q6" onclick="allergyAdd()" class="w3-btn w3-black">Yes</a>
+            <a href="#q6" onclick="coldAdd()" class="w3-btn w3-black">No</a>
+        </div>
+    </div>
+
+    <!-- QUESTION 6 -->
+    <div class="page" id="q6">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Question 6</h1>
+        </div>
+        <div class="w3-container">
+            <p>Do you have a wet cough?</p>
+            <a href="#resultsPage" onclick="allergyAdd(); showResults();" class="w3-btn w3-black">No</a>
+            <a href="#resultsPage" onclick="coldAdd(); showResults();" class="w3-btn w3-black">Yes</a>
+        </div>
+    </div>
+
+    <!-- RESULTS PAGE -->
+    <div class="page" id="resultsPage">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Your Results</h1>
+        </div>
+        <div class="w3-container">
+            <p id="results"></p>
+            <a href="#start" class="w3-btn w3-grey">Restart</a>
+        </div>
+    </div>
+
+    <footer class="w3-bottom w3-container w3-flat-carrot">
+        <p>DIY!</p>
+    </footer>
+
+</body>
+</html>
